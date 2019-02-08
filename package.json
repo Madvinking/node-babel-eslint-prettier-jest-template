@@ -1,0 +1,57 @@
+{
+  "name": "node-babel-eslint-prettier-jest-template",
+  "version": "1.0.0",
+  "description": "template for using all the super packages with node",
+  "main": "src/index.mjs",
+  "scripts": {
+    "clean": "rm -r node_modules",
+    "start": "node .",
+    "watch": "nodemon --inspect=0.0.0.0:9229 --exec babel-node src/index.mjs",
+    "build": "babel src/**/*.mjs --out-dir dist",
+    "lint": "eslint \"src/**/*.mjs\" --quiet",
+    "format": "prettier --write \"src/**/*.mjs\"",
+    "prod": "yarn format && yarn lint && yarn build && yarn test",
+    "docker": "docker-compose -f dockers/docker-compose.yml up",
+    "docker:dev": "docker-compose -f dockers/docker-compose-dev.yml up",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn prod"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madvinking/node-babel-eslint-prettier-jest-template.git"
+  },
+  "keywords": [
+    "node",
+    "babel",
+    "jest",
+    "eslint",
+    "prettier"
+  ],
+  "author": "nir winkler <nir.winklerg@gmail.com>",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/madvinking/node-babel-eslint-prettier-jest-template/issues"
+  },
+  "homepage": "https://github.com/madvinking/node-babel-eslint-prettier-jest-template#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "eslint": "^5.13.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.2.2",
+    "husky": "^1.3.1",
+    "jest": "^24.1.0",
+    "jest-cli": "^24.1.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.16.4"
+  }
+}
