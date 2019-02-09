@@ -36,6 +36,20 @@
   "bugs": {
     "url": "https://github.com/madvinking/node-babel-eslint-prettier-jest-template/issues"
   },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.mjs$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "mjs",
+      "js"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.?(m)js?(x)",
+      "**/?(*.)(spec|test).?(m)js?(x)"
+    ]
+  },
   "homepage": "https://github.com/madvinking/node-babel-eslint-prettier-jest-template#readme",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -44,6 +58,8 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.1.0",
     "eslint": "^5.13.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-import": "^2.16.0",
