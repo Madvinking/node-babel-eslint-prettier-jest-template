@@ -31,15 +31,16 @@
     "eslint",
     "prettier"
   ],
-  "author": "nir winkler <nir.winklerg@gmail.com>",
-  "license": "Apache 2.0",
+  "author": "nir winkler <madvinking@gmail.com>",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/madvinking/node-babel-eslint-prettier-jest-template/issues"
   },
   "jest": {
     "verbose": true,
     "transform": {
-      "^.+\\.mjs$": "babel-jest"
+      "^.+\\.mjs$": "babel-jest",
+      "^.+\\.js$": "babel-jest"
     },
     "moduleFileExtensions": [
       "mjs",
@@ -57,6 +58,7 @@
     "@babel/node": "^7.2.2",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
@@ -69,5 +71,8 @@
     "jest-cli": "^24.1.0",
     "nodemon": "^1.18.9",
     "prettier": "^1.16.4"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.3.1"
   }
 }
