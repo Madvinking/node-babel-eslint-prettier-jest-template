@@ -5,7 +5,7 @@
   "main": "src/index.mjs",
   "scripts": {
     "clean": "rm -r node_modules",
-    "start": "node .",
+    "start": "babel-node .",
     "watch": "nodemon --inspect=0.0.0.0:9229 --exec babel-node src/index.mjs",
     "build": "babel src/**/*.mjs --out-dir dist",
     "lint": "eslint \"src/**/*.{mjs,js}\" --quiet",
